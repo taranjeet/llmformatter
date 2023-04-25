@@ -21,7 +21,7 @@ from llmformatter import llm_formatter
 openai.api_key = "sk-..."
 
 # get output as json which can be parsed
-prompt = """You need to provide a single random question along with the correct answer related to Naruto. The question must be unique and should fall under one of these categories: game mechanics, popular characters, in-game currencies, mobile game developers, or mobile game history. You will generate a question, four options, one correct, three wrong. The options should have no labels like A, B, C or D. Options should be unique and should not contain repetitive or same value. Correct answer must exist in the options."""
+prompt = """You need to provide a single random question along with the correct answer related to Naruto. You will generate a question, four options, one correct, three wrong. The options should have no labels like A, B, C or D. Options should be unique and should not contain repetitive or same value. Correct answer must exist in the options."""
 
 response_normal = openai.ChatCompletion.create(messages=[{"role": "user", "content": prompt}], model="gpt-3.5-turbo", temperature=0, top_p=1)
 print(response_normal.choices[0].message.content)
